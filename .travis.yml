@@ -8,7 +8,8 @@ before_install:
     - go get github.com/mattn/goveralls
     - go get golang.org/x/tools/cmd/cover
 script:
-    - go test ./arrimpl -v -covermode=count -coverprofile=coverage.out
-    - "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci"
-    - go test ./llimpl -v -covermode=count -coverprofile=coverage.out
+    - go test ./arrimpl -v -covermode=count -coverprofile=a.part
+    - go test ./llimpl -v -covermode=count -coverprofile=b.part
+    - echo "mode: set" > coverage.out
+    - grep -h -v "mode: set" *.part >> coverage.out
     - "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci"
