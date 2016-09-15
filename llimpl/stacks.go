@@ -6,3 +6,11 @@ type Node struct {
 	element int
 	next    *Node
 }
+
+var head *Node
+
+// NewStack initializes stack where head pointing to nil
+func NewStack() *Node {
+	head = nil
+	return head
+}
