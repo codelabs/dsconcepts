@@ -10,5 +10,5 @@ before_install:
 script:
     - go test ./arrimpl -v -covermode=count -coverprofile=coverage.out
     - "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci"
-    - go test ./llimpl -v -covermode=count -coverprofile=llcoverage.out
-    - "$HOME/gopath/bin/goveralls -coverprofile=llcoverage.out -service=travis-ci"
+    - go test ./llimpl -v -covermode=count -coverprofile=coverage.out
+    - "$HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci"
